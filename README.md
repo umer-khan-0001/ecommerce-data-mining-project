@@ -130,9 +130,7 @@ Required Python packages (see requirements below)
 ## 👨‍💻 Author
 
 **Umer Ahmed**
-- Registration: FA21-BDS-020
-- Program: Bachelor of Data Science (BDS-5)
-- Institution: [Your University Name]
+
 
 ## 🤝 Contributing
 
