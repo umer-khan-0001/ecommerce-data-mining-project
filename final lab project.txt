@@ -1,0 +1,64 @@
+Open Ended Data Mining Lab Project: “Smart Retail Analytics” (Python Only)
+Evaluation and submission of report on 19th June 2025 
+Dataset:
+UCI Online Retail
+https://archive.ics.uci.edu/ml/datasets/Online+Retail
+(or download directly from Kaggle: https://www.kaggle.com/datasets/carrie1/ecommerce-data)
+Use this real world retail dataset of transactions (InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, Country) to explore customer behavior and build predictive models in Python (no Weka, no Decision Trees).
+Project Tasks & Deliverables
+1. Data Ingestion & Preprocessing
+•	Load the CSV into a Jupyter notebook.
+•	Clean missing CustomerIDs, remove cancellations (InvoiceNo starting with ‘C’), and engineer features:
+o	TotalAmount = Quantity × UnitPrice
+o	Recency, Frequency, Monetary (RFM) features per customer
+•	Encode any categorical fields (e.g. Country → one hot).
+•	Deliverable: Cleaned pandas.DataFrame ready for analysis.
+2. Similarity & Dissimilarity Matrices
+•	Compute:
+o	Euclidean distance between customers on RFM space.
+o	Jaccard similarity on sets of top 10 most purchased StockCodes per customer.
+•	Visualize as heatmaps with seaborn.heatmap.
+•	Deliverable: Notebook cells + commentary.
+3. Clustering
+•	K Means
+o	Use sklearn.cluster.KMeans.
+o	Determine optimal K via elbow plot or silhouette score.
+•	DBSCAN
+o	Use sklearn.cluster.DBSCAN.
+o	Tune eps and min_samples.
+•	Deliverable:
+o	2 D scatter (via PCA) showing clusters.
+o	Short write up comparing clusters & noise points.
+4. Association Rule Mining
+•	Apriori
+o	Use mlxtend.frequent_patterns.apriori and association_rules.
+o	Set min_support=0.02, filter rules with confidence ≥ 0.6 and lift ≥ 1.2.
+•	FP Growth
+o	Use mlxtend.frequent_patterns.fpgrowth.
+•	Deliverable: Table of top 10 rules by lift and runtime comparison.
+5. Naïve Bayes Classification
+•	Task: Predict whether a customer is “High Value” (Monetary > 75th percentile).
+•	Models:
+o	GaussianNB on RFM features.
+o	BernoulliNB on binarized purchase flags.
+•	Deliverable: Confusion matrices, ROC curves (with matplotlib), and brief analysis.
+6. Support Vector Machine (SVM)
+•	Task: Same “High Value” prediction.
+•	Models:
+o	sklearn.svm.SVC(kernel='linear')
+o	sklearn.svm.SVC(kernel='rbf')
+o	Grid search C and gamma with GridSearchCV.
+•	Deliverable:
+o	Decision boundary plots on 2 component PCA.
+o	Summary table of test accuracies.
+Final Report to be submitted 
+A single Jupyter notebook (or exported PDF) that walks through each step:
+1.	Introduction & Dataset Description
+2.	Preprocessing
+3.	Similarity/Dissimilarity Analysis
+4.	Clustering Results
+5.	Association Rules
+6.	Naïve Bayes & SVM Classification
+7.	Conclusions & Business Recommendations
+Include code, outputs, visualizations, and brief interpretations after each section.
+
